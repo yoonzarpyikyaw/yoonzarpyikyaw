@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yoon Zar Pyi Kyaw Portfolio</title>
+  <title>Yoon Zar Pyi Kyaw | Portfolio</title>
 
-  <!-- Google Fonts -->
+  <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <!-- ICON -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -17,11 +24,29 @@
       scroll-behavior:smooth;
     }
 
+    :root{
+      --bg:#f5f5f3;
+      --text:#111;
+      --secondary:#555;
+      --accent:#c0392b;
+      --card:rgba(255,255,255,0.65);
+      --border:rgba(255,255,255,0.2);
+    }
+
+    body.dark{
+      --bg:#0f1115;
+      --text:#fff;
+      --secondary:#bbb;
+      --accent:#ff5c5c;
+      --card:rgba(255,255,255,0.06);
+      --border:rgba(255,255,255,0.1);
+    }
+
     body{
-      font-family:'Poppins', sans-serif;
-      background:#f5f5f3;
-      color:#111;
-      line-height:1.7;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Poppins',sans-serif;
+      transition:0.4s;
     }
 
     a{
@@ -47,18 +72,21 @@
     /* NAVBAR */
 
     nav{
+      position:fixed;
       width:100%;
-      padding:30px 0;
-      position:sticky;
       top:0;
-      background:#f5f5f3;
-      z-index:1000;
+      left:0;
+      z-index:999;
+      backdrop-filter:blur(12px);
+      background:rgba(255,255,255,0.05);
+      border-bottom:1px solid var(--border);
     }
 
     .nav-container{
       display:flex;
       justify-content:space-between;
       align-items:center;
+      padding:20px 0;
     }
 
     .logo{
@@ -68,16 +96,28 @@
 
     .nav-links{
       display:flex;
-      gap:40px;
+      gap:35px;
     }
 
     .nav-links a{
-      font-size:15px;
+      position:relative;
       transition:0.3s;
     }
 
     .nav-links a:hover{
-      color:#c0392b;
+      color:var(--accent);
+    }
+
+    .menu-btn{
+      display:none;
+      font-size:24px;
+      cursor:pointer;
+    }
+
+    .theme-toggle{
+      margin-left:20px;
+      cursor:pointer;
+      font-size:20px;
     }
 
     /* HERO */
@@ -91,80 +131,123 @@
     .hero-content{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:80px;
+      gap:60px;
       align-items:center;
     }
 
-    .hero-text h1{
-      font-size:58px;
-      font-family:'Cormorant Garamond', serif;
-      margin-bottom:15px;
-    }
+    <!--.hero-text h1{
+      font-size:65px;
+      line-height:1.1;
+      font-family:'Cormorant Garamond',serif;
+      margin-bottom:20px;
+    }-->
+	
+	.hero-text h1{
+  font-size:72px;
+  line-height:1.1;
+  white-space:nowrap;
+}
 
     .hero-text h1 span{
-      color:#c0392b;
+      color:var(--accent);
     }
 
     .hero-text h3{
-      font-size:24px;
+      font-size:26px;
       font-weight:400;
-      margin-bottom:30px;
+      margin-bottom:25px;
     }
 
     .hero-text p{
-      font-size:18px;
+      color:var(--secondary);
       max-width:550px;
-      margin-bottom:30px;
-      color:#444;
+      margin-bottom:35px;
+      font-size:17px;
     }
 
-    .socials{
+    .btn-group{
       display:flex;
       gap:15px;
       flex-wrap:wrap;
     }
 
     .btn{
-      padding:12px 20px;
-      border-radius:8px;
-      font-size:14px;
+      padding:14px 24px;
+      border-radius:12px;
+      border:none;
+      font-size:15px;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .primary-btn{
+      background:var(--accent);
       color:white;
+    }
+
+    .secondary-btn{
+      background:var(--card);
+      color:var(--text);
+      border:1px solid var(--border);
+      backdrop-filter:blur(10px);
+    }
+
+    .btn:hover{
+      transform:translateY(-4px);
+    }
+
+    .socials{
+      margin-top:35px;
+      display:flex;
+      gap:18px;
+    }
+
+    .socials a{
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--card);
+      backdrop-filter:blur(10px);
+      border:1px solid var(--border);
       transition:0.3s;
     }
 
-    .github{ background:#222; }
-    .youtube{ background:#e53935; }
-    .website{ background:#1976d2; }
-    .linkedin{ background:#0a66c2; }
-
-    .btn:hover{
-      transform:translateY(-3px);
-      opacity:0.9;
+    .socials a:hover{
+      background:var(--accent);
+      color:white;
+      transform:translateY(-5px);
     }
 
     .hero-image{
-      position:relative;
+      display:flex;
+      justify-content:center;
     }
 
     .hero-image img{
       max-width:420px;
-      margin:auto;
+      border-radius:25px;
+      filter:drop-shadow(0 10px 25px rgba(0,0,0,0.2));
     }
 
-    /* SECTION TITLE */
+    /* TITLE */
 
     .section-title{
       font-size:72px;
-      font-family:'Cormorant Garamond', serif;
+      font-family:'Cormorant Garamond',serif;
       margin-bottom:50px;
     }
 
     /* ABOUT */
 
-    .about p{
+    .about-content{
       max-width:900px;
       font-size:18px;
-      color:#333;
+      color:var(--secondary);
+      line-height:1.9;
     }
 
     /* SKILLS */
@@ -172,15 +255,27 @@
     .skills-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:40px;
+      gap:30px;
       margin-top:50px;
     }
 
     .skill-card{
-      background:white;
-      padding:30px;
-      border-radius:20px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.05);
+      background:var(--card);
+      border:1px solid var(--border);
+      backdrop-filter:blur(15px);
+      padding:35px;
+      border-radius:25px;
+      transition:0.4s;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .skill-card i{
+      font-size:35px;
+      margin-bottom:20px;
+      color:var(--accent);
     }
 
     .skill-card h3{
@@ -190,6 +285,7 @@
 
     .skill-card ul{
       padding-left:20px;
+      color:var(--secondary);
     }
 
     /* CONTACT */
@@ -197,26 +293,46 @@
     .contact-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:40px;
-      margin-top:60px;
+      gap:30px;
+      margin-top:50px;
     }
 
-    .contact-box{
-      background:white;
-      padding:30px;
-      border-radius:20px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    .contact-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      backdrop-filter:blur(15px);
+      padding:35px;
+      border-radius:25px;
     }
 
-    .contact-box h3{
+    .contact-card h3{
       margin-bottom:15px;
     }
 
+    .contact-card p{
+      color:var(--secondary);
+    }
+
+    /* FOOTER */
+
     footer{
-      padding:40px 0;
       text-align:center;
-      color:#777;
+      padding:40px 0;
+      color:var(--secondary);
       font-size:14px;
+    }
+
+    /* ANIMATION */
+
+    .hidden{
+      opacity:0;
+      transform:translateY(40px);
+      transition:all 1s;
+    }
+
+    .show{
+      opacity:1;
+      transform:translateY(0);
     }
 
     /* MOBILE */
@@ -229,8 +345,11 @@
       }
 
       .hero-text p{
-        margin:auto;
-        margin-bottom:30px;
+        margin:auto auto 30px;
+      }
+
+      .btn-group{
+        justify-content:center;
       }
 
       .socials{
@@ -242,11 +361,27 @@
       }
 
       .hero-text h1{
-        font-size:42px;
+        font-size:48px;
+		white-space:normal;
       }
 
       .nav-links{
-        gap:20px;
+        position:absolute;
+        top:80px;
+        right:-100%;
+        flex-direction:column;
+        width:250px;
+        background:var(--bg);
+        padding:30px;
+        transition:0.4s;
+      }
+
+      .nav-links.active{
+        right:0;
+      }
+
+      .menu-btn{
+        display:block;
       }
     }
 
@@ -258,20 +393,34 @@
   <!-- NAVBAR -->
 
   <nav>
+
     <div class="container nav-container">
 
       <div class="logo">
         YZPK
       </div>
 
-      <div class="nav-links">
+      <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
+        <a href="#skills">Technical Skills</a>
         <a href="#contact">Contact</a>
       </div>
 
+      <div style="display:flex; align-items:center;">
+
+        <div class="theme-toggle" id="themeToggle">
+          <i class="fa-solid fa-moon"></i>
+        </div>
+
+        <div class="menu-btn" id="menuBtn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+      </div>
+
     </div>
+
   </nav>
 
   <!-- HERO -->
@@ -280,46 +429,62 @@
 
     <div class="container hero-content">
 
-      <div class="hero-text">
+      <div class="hero-text hidden">
 
         <h1>
           I'm <span>Yoon Zar Pyi Kyaw</span>
         </h1>
 
         <h3>
-          Software Support Engineer & Database
+          Software Support Engineer <br>
+          Database & Linux Specialist
         </h3>
 
         <p>
-          Experienced Banking Software Support Engineer with strong knowledge in Database, Linux Server Environment and Core Banking Systems.
+          Experienced in Core Banking Systems,
+          Database Management,
+          Linux Server Administration,
+          and Production Environment Troubleshooting.
         </p>
 
-        <div class="socials">
+        <div class="btn-group">
 
-          <a class="btn github" href="#">
-            GitHub
+          <a href="resume.pdf" download class="btn primary-btn">
+            Download Resume
           </a>
 
-          <a class="btn youtube" href="#">
-            YouTube
-          </a>
-
-          <a class="btn website" href="#">
-            Website
-          </a>
-
-          <a class="btn linkedin" href="#">
-            LinkedIn
+          <a href="#contact" class="btn secondary-btn">
+            Contact Me
           </a>
 
         </div>
 
+        <div class="socials">
+
+        
+		  <a href="https://github.com/yoonzarpyikyaw" target="_blank">
+    <i class="bi bi-github"></i>
+  </a>
+
+  <a href="https://linkedin.com/in/yourname" target="_blank">
+    <i class="bi bi-linkedin"></i>
+  </a>
+
+  <a href="https://www.youtube.com/@yzpktechnotes" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-youtube"></i>
+  </a>
+
+  <a href="https://yoonzarpyikyaw.blogspot.com/" target="_blank">
+    <i class="bi bi-globe"></i>
+  </a>
+        </div>
+
       </div>
 
-      <div class="hero-image">
+      <div class="hero-image hidden">
 
         <!-- YOUR IMAGE -->
-        <img src="Mephoto-removebg-preview.png?v=1" alt="profile">
+        <img src="Mephoto-removebg-preview.png" alt="profile">
 
       </div>
 
@@ -329,18 +494,32 @@
 
   <!-- ABOUT -->
 
-  <section class="about" id="about">
+  <section id="about">
 
     <div class="container">
 
-      <h2 class="section-title">
+      <h2 class="section-title hidden">
         About Me
       </h2>
 
-      <p>
-        Banking Software Support Engineer အဖြစ် Core Banking System, Linux Server Environment, Database Architecture, SQL Query, Troubleshooting နှင့် System Optimization ပိုင်းများတွင် အတွေ့အကြုံရှိပါသည်။
-        Data Integrity နှင့် System Availability ကို အဓိကထားလုပ်ဆောင်နေပြီး Production Environment များကို maintain လုပ်နိုင်ပါသည်။
-      </p>
+      <div class="about-content hidden">
+
+        Banking Software Support Engineer အဖြစ် Core Banking Systems,
+        Linux Server Environment,
+        Database Architecture,
+        SQL Query Optimization,
+        Troubleshooting,
+        System Monitoring နှင့် Production Support ပိုင်းများတွင်
+        အတွေ့အကြုံရှိပါသည်။
+
+        Data Integrity နှင့် System Availability ကို အဓိကထား၍
+        Production Environment များကို maintain လုပ်နိုင်ပြီး
+        Linux Server Administration,
+        Virtual Machines,
+        System Optimization နှင့် Technical Support ပိုင်းများတွင်
+        ကျွမ်းကျင်မှုရှိပါသည်။
+
+      </div>
 
     </div>
 
@@ -352,47 +531,53 @@
 
     <div class="container">
 
-      <h2 class="section-title">
-        Skills
+      <h2 class="section-title hidden">
+        Technical Skills
       </h2>
 
       <div class="skills-grid">
 
-        <div class="skill-card">
+        <div class="skill-card hidden">
 
-          <h3>Backend</h3>
+          <i class="fa-solid fa-database"></i>
+
+          <h3>Database</h3>
 
           <ul>
-            <li>Database</li>
             <li>SQL Query</li>
-            <li>Linux Server</li>
-            <li>System Troubleshooting</li>
+            <li>Database Optimization</li>
+            <li>Data Integrity</li>
+            <li>Backup & Recovery</li>
           </ul>
 
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card hidden">
 
-          <h3>Frontend</h3>
+          <i class="fa-brands fa-linux"></i>
+
+          <h3>Linux Server</h3>
 
           <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Responsive Design</li>
+            <li>Server Administration</li>
+            <li>System Monitoring</li>
+            <li>Shell Command</li>
+            <li>Troubleshooting</li>
           </ul>
 
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card hidden">
 
-          <h3>Soft Skills</h3>
+          <i class="fa-solid fa-server"></i>
+
+          <h3>System Support</h3>
 
           <ul>
-            <li>Leadership</li>
-            <li>Communication</li>
-            <li>Teamwork</li>
-            <li>Time Management</li>
+            <li>Core Banking Support</li>
+            <li>Production Support</li>
+            <li>Issue Analysis</li>
+            <li>Virtual Machines</li>
           </ul>
 
         </div>
@@ -409,25 +594,40 @@
 
     <div class="container">
 
-      <h2 class="section-title">
-        Reach Out
+      <h2 class="section-title hidden">
+        Contact Me
       </h2>
 
       <div class="contact-grid">
 
-        <div class="contact-box">
-          <h3>Address</h3>
-          <p>Yangon, Myanmar</p>
-        </div>
+        <div class="contact-card hidden">
 
-        <div class="contact-box">
           <h3>Email</h3>
-          <p>yourmail@gmail.com</p>
+
+          <p>
+            yourmail@gmail.com
+          </p>
+
         </div>
 
-        <div class="contact-box">
+        <div class="contact-card hidden">
+
           <h3>Phone</h3>
-          <p>09xxxxxxxxx</p>
+
+          <p>
+            +95 9xxxxxxxx
+          </p>
+
+        </div>
+
+        <div class="contact-card hidden">
+
+          <h3>Location</h3>
+
+          <p>
+            Yangon, Myanmar
+          </p>
+
         </div>
 
       </div>
@@ -436,9 +636,52 @@
 
   </section>
 
+  <!-- FOOTER -->
+
   <footer>
-    © 2026 Yoon Zar Pyi Kyaw. All Rights Reserved.
+    © 2026 Yoon Zar Pyi Kyaw | Portfolio Website
   </footer>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    // DARK MODE
+
+    const themeToggle = document.getElementById("themeToggle");
+
+    themeToggle.onclick = () => {
+      document.body.classList.toggle("dark");
+    };
+
+    // MOBILE MENU
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.onclick = () => {
+      navLinks.classList.toggle("active");
+    };
+
+    // SCROLL ANIMATION
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach((entry) => {
+
+        if(entry.isIntersecting){
+          entry.target.classList.add("show");
+        }
+
+      });
+
+    });
+
+    hiddenElements.forEach((el) => observer.observe(el));
+
+  </script>
 
 </body>
 </html>
