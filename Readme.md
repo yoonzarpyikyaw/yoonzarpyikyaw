@@ -6,7 +6,6 @@
 - 🌱 I’m currently learning **Mysql,Postgres,Python,Docker,Linux**
 
 - 📝 I regularly write articles on [https://yoonzarpyikyaw.blogspot.com/](https://yoonzarpyikyaw.blogspot.com/)
--                                   [https://www.linkedin.com/in/yoon-zar-pyi-kyaw-0a272b3ba/](https://www.linkedin.com/in/yoon-zar-pyi-kyaw-0a272b3ba/)
 
 - 📄 Know about my experiences - GTB (Aug,2018-Jan,2025), AGDBANK(JUL,2026-ACTIVE)
 
