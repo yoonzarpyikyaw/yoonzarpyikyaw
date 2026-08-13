@@ -1,14 +1,17 @@
 <h1 align="center">Hi 👋, I'm Yoon Zar Pyi Kyaw</h1>
-<h3 align="center">About Me
+<h3 align="center">About Me</h3>
 
 I’m an IT professional with hands-on experience in Application & Production Support, Linux operations, SQL, and database-related operations.
 
 My experience includes troubleshooting enterprise applications, User Acceptance Testing (UAT), EOD processing, database backup and dump operations, system monitoring, SQL-based data validation, and cross-functional technical support.
 
 I’m currently expanding my skills in PostgreSQL, Python, ETL, and Data Engineering, with a growing interest in Database Administration and building reliable data platforms and pipelines.
-</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=yoonzarpyikyaw&label=Profile%20views&color=0e75b6&style=flat" alt="yoonzarpyikyaw" /> </p>
+<br />
+
+<p align="left">
+  <img src="https://komarev.com/ghpvc/?username=yoonzarpyikyaw&label=Profile%20views&color=0e75b6&style=flat" alt="yoonzarpyikyaw" />
+</p>
 
 🌱Currently Learning
 - Python
